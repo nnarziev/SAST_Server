@@ -1,6 +1,9 @@
 from django.urls import re_path
 from . import views
+from django.conf.urls import url
 
 urlpatterns = [
-    re_path(r'^register?/', views.register_api)
+    url(r'^register?/', views.register_api),
+    url(r'^login?/', views.login_api)
 ]
+
