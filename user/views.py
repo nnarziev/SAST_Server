@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
@@ -58,3 +57,5 @@ def login_api(request):
                 'result': RES_FAILURE, 'reason': 'wrong credentials passed'
             })
     return JsonResponse(data={'result': RES_BAD_REQUEST, 'reason': 'Username or Password was not passed as a POST argument!'})
+
+

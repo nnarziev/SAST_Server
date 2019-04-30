@@ -22,9 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_be&bww-!427j#z!nbf#mnry7b$0lj@8bkmhxbb9!x5y3d4b@y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+APPEND_SLASH = False
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '165.246.43.163'
+]
 
 # Application definition
 
@@ -35,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user'
+    'user',
+    'sensor_data'
 ]
 
 MIDDLEWARE = [
@@ -74,8 +79,12 @@ WSGI_APPLICATION = 'SAST_Server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'nslab123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

@@ -21,4 +21,5 @@ from django.urls import include
 urlpatterns = [
     # path('admin/', admin.site.urls),
     re_path(r'user/', include('user.urls')),
+    re_path(r'sensor_data/', include('sensor_data.urls'))
 ]
